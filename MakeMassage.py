@@ -64,6 +64,6 @@ async def msg_choosen(msg: Message, state:FSMContext):
     udata = await state.get_data()
     await msg.answer(
         text=f"Message - {msg.text} to {udata['targetContact']}")
-    await bot_main.bot.send_message(377702618, udata['targetContact'])
+    await bot_main.bot.send_message(udata['targetContact'], msg.text)
     print(type(msg.from_user.id))
     await state.clear()
